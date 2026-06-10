@@ -5,14 +5,41 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Edvaldo & Ana Rita</title>
 
+<link href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Cinzel:wght@400;700&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+
 <style>
+:root{
+  --gold:#d4af37;
+  --gold-light:#f7e27b;
+  --gold-dark:#8c6b1f;
+  --green:#1f4d3a;
+  --green-light:#2f6b52;
+  --cream:#f9f6ef;
+}
+
 *{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
 
 body{
-  font-family:Arial, sans-serif;
-  background:linear-gradient(135deg,#f9f6ef,#dce8e2,#ffffff);
-  color:#1f4d3a;
-  text-align:center;
+  font-family:'Montserrat',sans-serif;
+  background:linear-gradient(135deg,#dce8e2,#f9f6ef,#ffffff);
+  color:var(--green);
+  overflow-x:hidden;
+}
+
+body::before{
+  content:"";
+  position:fixed;
+  inset:0;
+  background-image:radial-gradient(circle, rgba(212,175,55,.18) 1px, transparent 1px);
+  background-size:30px 30px;
+  animation:bgMove 15s linear infinite;
+  z-index:-1;
+}
+
+@keyframes bgMove{
+  from{background-position:0 0}
+  to{background-position:150px 150px}
 }
 
 .hero{
@@ -23,57 +50,95 @@ body{
   padding:20px;
 }
 
-.card,.box{
-  max-width:800px;
-  margin:auto;
-  background:#fff;
+.card{
+  width:100%;
+  max-width:1000px;
+  background:linear-gradient(180deg,#ffffff,#f4efe6);
   padding:30px;
-  border-radius:25px;
-  box-shadow:0 10px 30px rgba(0,0,0,.15);
-  border:1px solid #d4af37;
+  border-radius:30px;
+  box-shadow:0 20px 60px rgba(31,77,58,.25);
+  text-align:center;
+  border:1px solid rgba(212,175,55,.45);
 }
 
-.logo{
-  max-width:280px;
-  width:90%;
-  margin-bottom:20px;
+.logos{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:22px;
 }
 
-h1{
-  font-size:48px;
-  color:#d4af37;
-  margin-bottom:10px;
+.logo1{width:170px;max-width:70%}
+
+.logo2{
+  width:280px;
+  max-width:90%;
+  background:transparent;
+  mix-blend-mode:multiply;
+  filter:drop-shadow(0 10px 20px rgba(0,0,0,.2)) brightness(1.05) contrast(1.08);
 }
 
-.titulo{
-  font-size:36px;
-  color:#d4af37;
-  margin-bottom:20px;
+.nomes{
+  font-family:'Alex Brush',cursive;
+  font-size:clamp(42px, 8vw, 88px);
+  background:linear-gradient(45deg,#8c6b1f,#d4af37,#f7e27b,#d4af37);
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+  margin:18px 0 10px;
+  white-space:nowrap;
+  font-weight:400;
+  line-height:1.1;
+}
+
+.frase{
+  font-size:15px;
+  margin:10px auto 20px;
+  max-width:600px;
 }
 
 .data{
-  font-size:22px;
-  font-weight:bold;
-  color:#8c6b1f;
-  margin:20px 0;
+  font-family:'Cinzel',serif;
+  font-weight:700;
+  margin-bottom:15px;
+  color:var(--gold-dark);
 }
 
 .btn{
   display:block;
-  margin:10px auto;
-  padding:14px 25px;
-  max-width:330px;
+  width:100%;
+  margin:8px 0;
+  padding:14px;
   border-radius:30px;
-  background:#1f4d3a;
-  color:#f7e27b;
+  background:linear-gradient(135deg,#1f4d3a,#2f6b52);
+  color:var(--gold-light);
   text-decoration:none;
   font-weight:bold;
-  border:none;
+  border:1px solid rgba(247,226,123,.7);
   cursor:pointer;
+  box-shadow:0 8px 20px rgba(31,77,58,.25);
 }
 
 section{
   padding:40px 15px;
+  text-align:center;
+}
+
+.titulo{
+  font-family:'Alex Brush',cursive;
+  font-size:42px;
+  color:var(--gold);
+  font-weight:400;
+  margin-bottom:15px;
+}
+
+.box{
+  max-width:700px;
+  margin:auto;
+  background:linear-gradient(180deg,#ffffff,#f4efe6);
+  padding:22px;
+  border-radius:22px;
+  border:1px solid rgba(212,175,55,.35);
+  box-shadow:0 5px 20px rgba(31,77,58,.15);
 }
 
 .contador{
@@ -84,95 +149,162 @@ section{
 }
 
 .tempo{
-  width:80px;
-  padding:12px;
-  background:#fff;
+  width:72px;
+  padding:10px;
+  background:#f4efe6;
   border-radius:12px;
-  border:1px solid #d4af37;
+  border:1px solid rgba(212,175,55,.5);
 }
 
 .tempo span{
   display:block;
-  font-size:26px;
+  font-size:22px;
   font-weight:bold;
-  color:#8c6b1f;
+  color:var(--gold-dark);
+}
+
+.audio{
+  position:fixed;
+  bottom:15px;
+  right:15px;
+  background:linear-gradient(135deg,#1f4d3a,#2f6b52);
+  color:var(--gold-light);
+  padding:10px 15px;
+  border-radius:20px;
+  cursor:pointer;
+  z-index:99;
+  border:1px solid rgba(247,226,123,.7);
+  box-shadow:0 8px 20px rgba(0,0,0,.25);
 }
 
 footer{
-  background:#1f4d3a;
-  color:white;
-  padding:25px;
+  background:var(--green);
+  color:#fff;
+  padding:32px 15px;
+  text-align:center;
+}
+
+footer .assinatura{
+  font-family:'Alex Brush',cursive;
+  font-size:42px;
+  color:var(--gold-light);
+}
+
+@media(min-width:768px){
+  .card{padding:45px}
+  .logo1{width:220px}
+  .logo2{width:340px}
+  .titulo{font-size:58px}
+  .btn{display:inline-block;width:auto;padding:12px 25px;margin:8px 5px}
+  .tempo{width:95px;padding:16px 10px}
+  .tempo span{font-size:30px}
+}
+
+@media(min-width:1024px){
+  .card{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:36px;
+    align-items:center;
+    text-align:left;
+  }
+  .left{text-align:center}
+  .right{text-align:left}
+  .frase{margin-left:0}
+  .logo1{width:240px}
+  .logo2{width:390px}
 }
 
 @media(max-width:600px){
-  h1{font-size:38px}
-  .titulo{font-size:30px}
+  .card{padding:24px 18px}
+  .logos{gap:18px}
+  .logo1{width:145px}
+  .logo2{width:245px}
+  .nomes{font-size:clamp(36px, 11vw, 46px)}
 }
 </style>
 </head>
 
 <body>
 
+<audio id="musica" loop>
+  <source src="amor.mp3" type="audio/mpeg">
+</audio>
+
+<div class="audio" onclick="playMusic()">Música</div>
+
 <div class="hero">
   <div class="card">
-
-    <img src="ea1.png" class="logo" alt="Edvaldo e Ana Rita">
-
-    <h1>Edvaldo & Ana Rita</h1>
-
-    <p>
-      Com alegria no coração, convidamos você para celebrar conosco este momento especial.
-    </p>
-
-    <div class="data">
-      05 de Setembro de 2026 • 17h
+    <div class="left">
+      <div class="logos">
+        <img src="casal01.png" class="logo1" alt="Monograma">
+        <img src="ea1.png" class="logo2" alt="Edvaldo e Ana Rita">
+      </div>
     </div>
 
-    <a class="btn" href="#contador">Contagem Regressiva</a>
-    <a class="btn" href="#cerimonia">Cerimônia</a>
-    <a class="btn" href="#presente">PIX</a>
-    <a class="btn" href="https://wa.me/5592993471741?text=Ol%C3%A1,%20confirmo%20minha%20presen%C3%A7a%20no%20casamento%20de%20Edvaldo%20e%20Ana%20Rita." target="_blank">
-      Confirmar Presença
-    </a>
+    <div class="right">
+      <h1 class="nomes">Edvaldo & Ana Rita</h1>
 
+      <p class="frase">
+        Com alegria no coração, convidamos você para celebrar conosco este momento especial.
+      </p>
+
+      <div class="data">05 de Setembro de 2026 • 17h</div>
+
+      <a class="btn" href="#contador">Contagem Regressiva</a>
+      <a class="btn" href="#cerimonia">Cerimônia</a>
+      <a class="btn" href="#recepcao">Recepção</a>
+      <a class="btn" href="#presentes">PIX</a>
+      <a class="btn" target="_blank" href="https://wa.me/5592993471741?text=Ol%C3%A1,%20confirmo%20minha%20presen%C3%A7a%20no%20casamento%20de%20Edvaldo%20e%20Ana%20Rita.">Confirmar Presença</a>
+    </div>
   </div>
 </div>
 
 <section id="contador">
   <h2 class="titulo">Contagem Regressiva</h2>
-
   <div class="contador">
-    <div class="tempo"><span id="dias">00</span>Dias</div>
-    <div class="tempo"><span id="horas">00</span>Horas</div>
-    <div class="tempo"><span id="minutos">00</span>Min</div>
-    <div class="tempo"><span id="segundos">00</span>Seg</div>
+    <div class="tempo"><span id="d">00</span>Dias</div>
+    <div class="tempo"><span id="h">00</span>Horas</div>
+    <div class="tempo"><span id="m">00</span>Min</div>
+    <div class="tempo"><span id="s">00</span>Seg</div>
   </div>
 </section>
 
 <section id="cerimonia">
   <h2 class="titulo">Cerimônia Religiosa</h2>
-
   <div class="box">
     <p><strong>Igreja de São Jorge</strong></p>
-    <p>R. Emílio Ruas, 311 - São Jorge, Manaus - AM</p>
+    <p>R. Emílio Ruas, 311 - São Jorge, Manaus - AM, 69033-440</p>
     <p><strong>Dia:</strong> 05/09/2026</p>
     <p><strong>Horário da celebração:</strong> 17h</p>
+
+    <a class="btn" target="_blank" href="https://maps.app.goo.gl/MzMsnWYaQoSTDGcs5">
+      Ver localização
+    </a>
   </div>
 </section>
 
-<section id="presente">
-  <h2 class="titulo">PIX</h2>
+<section id="recepcao">
+  <h2 class="titulo">Recepção</h2>
+  <div class="box">
+    <p><strong>BEER DANCE</strong></p>
+    <p>Av. Ramos Ferreira, 1648 - Centro, Manaus - AM, 69020-010</p>
 
+    <a class="btn" target="_blank" href="https://maps.app.goo.gl/1npDzzRkS8GCxfjW8">
+      Abrir localização
+    </a>
+  </div>
+</section>
+
+<section id="presentes">
+  <h2 class="titulo">PIX</h2>
   <div class="box">
     <p>Se desejar nos presentear, utilize a chave PIX abaixo:</p>
 
     <p><strong>Chave PIX:</strong></p>
-    <p style="font-size:24px;color:#d4af37;font-weight:bold;">
-      51053942249
-    </p>
+    <p style="font-size:22px;color:#d4af37;font-weight:bold;">51053942249</p>
 
-    <p><strong>Titular:</strong></p>
-    <p>Edvaldo Cavalcante da Silva</p>
+    <p><strong>Titular:</strong><br>Edvaldo Cavalcante da Silva</p>
 
     <button class="btn" onclick="copiarPix()">Copiar Chave PIX</button>
   </div>
@@ -180,47 +312,58 @@ footer{
 
 <section id="presenca">
   <h2 class="titulo">Confirmação de Presença</h2>
-
   <div class="box">
-    <p>Confirme sua presença diretamente pelo WhatsApp:</p>
+    <p>Clique no botão abaixo para confirmar sua presença pelo WhatsApp.</p>
 
-    <p><strong>(92) 99347-1741</strong></p>
-
-    <a class="btn" href="https://wa.me/5592993471741?text=Ol%C3%A1,%20confirmo%20minha%20presen%C3%A7a%20no%20casamento%20de%20Edvaldo%20e%20Ana%20Rita." target="_blank">
+    <a class="btn" target="_blank" href="https://wa.me/5592993471741?text=Ol%C3%A1,%20confirmo%20minha%20presen%C3%A7a%20no%20casamento%20de%20Edvaldo%20e%20Ana%20Rita.">
       Confirmar pelo WhatsApp
     </a>
+
+    <p style="margin-top:15px;">WhatsApp: (92) 99347-1741</p>
   </div>
 </section>
 
 <footer>
-  <p><strong>Edvaldo & Ana Rita</strong></p>
-  <p>05/09/2026 às 17h</p>
+  <p class="assinatura">Edvaldo & Ana Rita</p>
+  <p>05 de Setembro de 2026 • 17h</p>
 </footer>
 
 <script>
-const dataCasamento = new Date("2026-09-05T17:00:00-04:00").getTime();
+let tocando = false;
+
+function playMusic(){
+  const musica = document.getElementById("musica");
+  const botao = document.querySelector(".audio");
+
+  if(!tocando){
+    musica.play();
+    botao.innerHTML = "Pausar";
+    tocando = true;
+  }else{
+    musica.pause();
+    botao.innerHTML = "Música";
+    tocando = false;
+  }
+}
+
+const data = new Date("2026-09-05T17:00:00-04:00").getTime();
 
 function atualizarContagem(){
-  const agora = new Date().getTime();
-  const distancia = dataCasamento - agora;
+  const now = new Date().getTime();
+  const diff = data - now;
 
-  if(distancia <= 0){
-    document.getElementById("dias").innerHTML = "00";
-    document.getElementById("horas").innerHTML = "00";
-    document.getElementById("minutos").innerHTML = "00";
-    document.getElementById("segundos").innerHTML = "00";
+  if(diff <= 0){
+    document.getElementById("d").innerHTML = "00";
+    document.getElementById("h").innerHTML = "00";
+    document.getElementById("m").innerHTML = "00";
+    document.getElementById("s").innerHTML = "00";
     return;
   }
 
-  const dias = Math.floor(distancia / (1000 * 60 * 60 * 24));
-  const horas = Math.floor((distancia % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-  const minutos = Math.floor((distancia % (1000 * 60 * 60)) / (1000 * 60));
-  const segundos = Math.floor((distancia % (1000 * 60)) / 1000);
-
-  document.getElementById("dias").innerHTML = dias;
-  document.getElementById("horas").innerHTML = horas;
-  document.getElementById("minutos").innerHTML = minutos;
-  document.getElementById("segundos").innerHTML = segundos;
+  document.getElementById("d").innerHTML = Math.floor(diff / (1000 * 60 * 60 * 24));
+  document.getElementById("h").innerHTML = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  document.getElementById("m").innerHTML = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+  document.getElementById("s").innerHTML = Math.floor((diff % (1000 * 60)) / 1000);
 }
 
 setInterval(atualizarContagem, 1000);
