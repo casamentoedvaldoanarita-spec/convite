@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -28,21 +27,6 @@ body{
   overflow-x:hidden;
 }
 
-body::before{
-  content:"";
-  position:fixed;
-  inset:0;
-  background-image:radial-gradient(circle, rgba(212,175,55,.18) 1px, transparent 1px);
-  background-size:30px 30px;
-  animation:bgMove 15s linear infinite;
-  z-index:-1;
-}
-
-@keyframes bgMove{
-  from{background-position:0 0}
-  to{background-position:150px 150px}
-}
-
 .hero{
   min-height:100vh;
   display:flex;
@@ -62,33 +46,12 @@ body::before{
   border:1px solid rgba(212,175,55,.45);
 }
 
-.logos{
-  display:flex;
-  flex-direction:column;
-  align-items:center;
-  gap:22px;
-}
-
-.logo1{width:170px;max-width:70%}
-
-.logo2{
-  width:280px;
-  max-width:90%;
-  background:transparent;
-  mix-blend-mode:multiply;
-  filter:drop-shadow(0 10px 20px rgba(0,0,0,.2)) brightness(1.05) contrast(1.08);
-}
-
 .nomes{
   font-family:'Alex Brush',cursive;
   font-size:clamp(42px, 8vw, 88px);
-  background:linear-gradient(45deg,#8c6b1f,#d4af37,#f7e27b,#d4af37);
-  -webkit-background-clip:text;
-  -webkit-text-fill-color:transparent;
+  color:var(--gold);
   margin:18px 0 10px;
-  white-space:nowrap;
   font-weight:400;
-  line-height:1.1;
 }
 
 .frase{
@@ -116,7 +79,6 @@ body::before{
   font-weight:bold;
   border:1px solid rgba(247,226,123,.7);
   cursor:pointer;
-  box-shadow:0 8px 20px rgba(31,77,58,.25);
 }
 
 section{
@@ -139,27 +101,6 @@ section{
   padding:22px;
   border-radius:22px;
   border:1px solid rgba(212,175,55,.35);
-  box-shadow:0 5px 20px rgba(31,77,58,.15);
-}
-
-.input-campo{
-  width:100%;
-  padding:12px;
-  border-radius:10px;
-  border:1px solid var(--gold);
-  margin-top:12px;
-  text-align:center;
-  font-size:16px;
-}
-
-.textarea-campo{
-  width:100%;
-  height:150px;
-  margin-top:10px;
-  padding:10px;
-  border-radius:10px;
-  border:1px solid var(--gold);
-  font-size:13px;
 }
 
 .contador{
@@ -170,8 +111,8 @@ section{
 }
 
 .tempo{
-  width:72px;
-  padding:10px;
+  width:80px;
+  padding:12px;
   background:#f4efe6;
   border-radius:12px;
   border:1px solid rgba(212,175,55,.5);
@@ -179,7 +120,7 @@ section{
 
 .tempo span{
   display:block;
-  font-size:22px;
+  font-size:26px;
   font-weight:bold;
   color:var(--gold-dark);
 }
@@ -194,8 +135,6 @@ section{
   border-radius:20px;
   cursor:pointer;
   z-index:99;
-  border:1px solid rgba(247,226,123,.7);
-  box-shadow:0 8px 20px rgba(0,0,0,.25);
 }
 
 footer{
@@ -210,39 +149,6 @@ footer .assinatura{
   font-size:42px;
   color:var(--gold-light);
 }
-
-@media(min-width:768px){
-  .card{padding:45px}
-  .logo1{width:220px}
-  .logo2{width:340px}
-  .titulo{font-size:58px}
-  .btn{display:inline-block;width:auto;padding:12px 25px;margin:8px 5px}
-  .tempo{width:95px;padding:16px 10px}
-  .tempo span{font-size:30px}
-}
-
-@media(min-width:1024px){
-  .card{
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:36px;
-    align-items:center;
-    text-align:left;
-  }
-  .left{text-align:center}
-  .right{text-align:left}
-  .frase{margin-left:0}
-  .logo1{width:240px}
-  .logo2{width:390px}
-}
-
-@media(max-width:600px){
-  .card{padding:24px 18px}
-  .logos{gap:18px}
-  .logo1{width:145px}
-  .logo2{width:245px}
-  .nomes{font-size:clamp(36px, 11vw, 46px)}
-}
 </style>
 </head>
 
@@ -252,31 +158,22 @@ footer .assinatura{
   <source src="amor.mp3" type="audio/mpeg">
 </audio>
 
-<div class="audio" onclick="playMusic()">🎵 Música</div>
+<div class="audio" onclick="playMusic()">Música</div>
 
 <div class="hero">
   <div class="card">
-    <div class="left">
-      <div class="logos">
-        <img src="casal01.png" class="logo1" alt="Monograma">
-        <img src="ea1.png" class="logo2" alt="Edvaldo e Ana">
-      </div>
-    </div>
+    <h1 class="nomes">Edvaldo & Ana</h1>
 
-    <div class="right">
-      <h1 class="nomes">Edvaldo & Ana</h1>
+    <p class="frase">
+      Com alegria no coração, convidamos você para celebrar conosco este momento especial.
+    </p>
 
-      <p class="frase">
-        Com alegria no coração, convidamos você para celebrar conosco este momento especial.
-      </p>
+    <div class="data">05 de setembro de 2026 às 17h</div>
 
-      <div class="data">19h</div>
-
-      <a class="btn" href="#cerimonia">Cerimônia</a>
-      <a class="btn" href="#recepcao">Recepção</a>
-      <a class="btn" href="#presentes">Lista de Presentes</a>
-      <a class="btn" href="#presenca">Confirmar Presença</a>
-    </div>
+    <a class="btn" href="#cerimonia">Cerimônia</a>
+    <a class="btn" href="#recepcao">Recepção</a>
+    <a class="btn" href="#presentes">Lista de Presentes</a>
+    <a class="btn" href="#presenca">Confirmar Presença</a>
   </div>
 </div>
 
@@ -294,12 +191,9 @@ footer .assinatura{
   <h2 class="titulo">Cerimônia Religiosa</h2>
   <div class="box">
     <p><strong>Igreja de São Jorge</strong></p>
-    <p>R. Emílio Ruas, 311 - São Jorge, Manaus - AM, 69033-440</p>
-    <p><strong>Horário:</strong> 19h</p>
-
-    <a class="btn" target="_blank" href="https://maps.app.goo.gl/MzMsnWYaQoSTDGcs5">
-      Ver localização
-    </a>
+    <p>R. Emílio Ruas, 311 - São Jorge, Manaus - AM</p>
+    <p><strong>Dia:</strong> 05/09/2026</p>
+    <p><strong>Horário da celebração:</strong> 17h</p>
   </div>
 </section>
 
@@ -307,137 +201,40 @@ footer .assinatura{
   <h2 class="titulo">Recepção</h2>
   <div class="box">
     <p><strong>BEER DANCE</strong></p>
-    <p>Av. Ramos Ferreira, 1648 - Centro, Manaus - AM, 69020-010</p>
-
-    <a class="btn" target="_blank" href="https://maps.app.goo.gl/1npDzzRkS8GCxfjW8">
-      Abrir localização
-    </a>
+    <p>Av. Ramos Ferreira, 1648 - Centro, Manaus - AM</p>
   </div>
 </section>
 
 <section id="presentes">
   <h2 class="titulo">Lista de Presentes</h2>
   <div class="box">
-    <p>Escolha a melhor forma de nos presentear.</p>
-
-    <button class="btn" onclick="mostrarOpcao('bemol')">Loja Bemol</button>
-    <button class="btn" onclick="mostrarOpcao('dinamica')">Loja Dinâmica</button>
-    <button class="btn" onclick="mostrarOpcao('pix')">PIX</button>
-
-    <div id="bemol" style="display:none; margin-top:15px;">
-      <p>Você pode escolher um presente diretamente na Bemol.</p>
-      <a class="btn" target="_blank" href="https://www.bemol.com.br/">Acessar Bemol</a>
-    </div>
-
-    <div id="dinamica" style="display:none; margin-top:15px;">
-      <p>Você pode escolher um presente diretamente na Dinâmica.</p>
-      <a class="btn" target="_blank" href="https://www.dinamica.com.br/">Acessar Dinâmica</a>
-    </div>
-
-    <div id="pix" style="display:none; margin-top:15px;">
-      <p>Se preferir, você pode contribuir via PIX.</p>
-      <p><strong>Chave PIX:</strong></p>
-      <p style="font-size:20px;color:#d4af37;font-weight:bold;">993293049</p>
-
-      <textarea id="pixCode" class="textarea-campo" readonly></textarea>
-
-      <button class="btn" onclick="copiarPix()">Copiar chave PIX</button>
-    </div>
+    <p>Se desejar nos presentear, você pode contribuir via PIX.</p>
+    <p><strong>Chave PIX:</strong></p>
+    <p style="font-size:22px;color:#d4af37;font-weight:bold;">51053942249</p>
+    <p><strong>Titular:</strong> Edvaldo Cavalcante da Silva</p>
+    <button class="btn" onclick="copiarPix()">Copiar chave PIX</button>
   </div>
 </section>
 
 <section id="presenca">
   <h2 class="titulo">Confirme sua presença</h2>
   <div class="box">
-    <p>Primeiro confirme seu nome ou telefone na lista. Depois o sistema gera suas senhas e envia para os noivos.</p>
+    <p>Confirme sua presença pelo WhatsApp:</p>
+    <p><strong>92 99347-1741</strong></p>
 
-    <input type="text" id="buscaConvidado" class="input-campo" placeholder="Digite seu nome ou telefone">
-
-    <button class="btn" onclick="consultarConvite()">Consultar e enviar confirmação</button>
-
-    <div id="areaResultado" style="display:none;">
-      <textarea id="resultadoConvite" class="textarea-campo" readonly></textarea>
-      <button class="btn" onclick="enviarWhatsApp()">Enviar novamente pelo WhatsApp</button>
-      <button class="btn" onclick="copiarConfirmacao()">Copiar confirmação</button>
-    </div>
+    <a class="btn" target="_blank" href="https://wa.me/5592993471741?text=Olá,%20confirmo%20minha%20presença%20no%20casamento%20de%20Edvaldo%20e%20Ana.">
+      Confirmar pelo WhatsApp
+    </a>
   </div>
 </section>
 
 <footer>
   <p class="assinatura">Edvaldo & Ana</p>
-  <p>Cerimônia às 19h</p>
+  <p>Cerimônia: 05/09/2026 às 17h</p>
 </footer>
 
 <script>
-const numeroNoivos = "5592993293049";
-
-const convidados = [
-  { nome: "ana silva", telefone: "92984000001", senhas: 1 },
-  { nome: "bruno souza", telefone: "92984000002", senhas: 1 },
-  { nome: "carla mendes", telefone: "92984000003", senhas: 1 },
-  { nome: "daniel rocha", telefone: "92984000004", senhas: 1 },
-  { nome: "eliane costa", telefone: "92984000005", senhas: 1 },
-  { nome: "fabio lima", telefone: "92984000006", senhas: 1 },
-  { nome: "gabriela santos", telefone: "92984000007", senhas: 1 },
-  { nome: "henrique alves", telefone: "92984000008", senhas: 1 },
-  { nome: "isabela nunes", telefone: "92984000009", senhas: 1 },
-  { nome: "julio pereira", telefone: "92984000010", senhas: 1 },
-  { nome: "karina oliveira", telefone: "92984000011", senhas: 1 },
-  { nome: "lucas barbosa", telefone: "92984000012", senhas: 1 },
-  { nome: "mariana dias", telefone: "92984000013", senhas: 1 },
-  { nome: "natalia ramos", telefone: "92984000014", senhas: 1 },
-  { nome: "otavio martins", telefone: "92984000015", senhas: 1 },
-  { nome: "patricia vieira", telefone: "92984000016", senhas: 1 },
-  { nome: "rafael castro", telefone: "92984000017", senhas: 1 },
-  { nome: "sabrina ferreira", telefone: "92984000018", senhas: 1 },
-  { nome: "thiago monteiro", telefone: "92984000019", senhas: 1 },
-  { nome: "vanessa araujo", telefone: "92984000020", senhas: 1 },
-  { nome: "william cardoso", telefone: "92984000021", senhas: 1 },
-  { nome: "aline teixeira", telefone: "92984000022", senhas: 1 },
-  { nome: "bianca freitas", telefone: "92984000023", senhas: 1 },
-  { nome: "caio moreira", telefone: "92984000024", senhas: 1 },
-  { nome: "debora campos", telefone: "92984000025", senhas: 1 },
-  { nome: "eduardo pinto", telefone: "92984000026", senhas: 1 },
-  { nome: "fernanda brito", telefone: "92984000027", senhas: 1 },
-  { nome: "gustavo reis", telefone: "92984000028", senhas: 1 },
-  { nome: "helena mota", telefone: "92984000029", senhas: 1 },
-  { nome: "igor machado", telefone: "92984000030", senhas: 1 },
-  { nome: "janaina cruz", telefone: "92984000031", senhas: 1 },
-  { nome: "leandro franco", telefone: "92984000032", senhas: 1 },
-  { nome: "monica assis", telefone: "92984000033", senhas: 1 },
-  { nome: "nelson correia", telefone: "92984000034", senhas: 1 },
-  { nome: "priscila moraes", telefone: "92984000035", senhas: 1 },
-  { nome: "ricardo sales", telefone: "92984000036", senhas: 1 },
-  { nome: "simone batista", telefone: "92984000037", senhas: 1 },
-  { nome: "tiago fonseca", telefone: "92984000038", senhas: 1 },
-  { nome: "valeria medeiros", telefone: "92984000039", senhas: 1 },
-  { nome: "yasmin carneiro", telefone: "92984000040", senhas: 1 },
-  { nome: "zeca andrade", telefone: "92984000041", senhas: 1 },
-  { nome: "amanda lopes", telefone: "92984000042", senhas: 1 },
-  { nome: "roberto neves", telefone: "92984000043", senhas: 1 },
-  { nome: "casal paulo e renata", telefone: "92984000044", senhas: 2 },
-  { nome: "casal mario e juliana", telefone: "92984000045", senhas: 2 },
-  { nome: "casal andre e larissa", telefone: "92984000046", senhas: 2 },
-  { nome: "casal felipe e camila", telefone: "92984000047", senhas: 2 },
-  { nome: "familia almeida", telefone: "92984000048", senhas: 3 },
-  { nome: "familia cavalcante", telefone: "92984000049", senhas: 3 },
-  { nome: "familia nascimento", telefone: "92984000050", senhas: 3 }
-];
-
-let mensagemConfirmacao = "";
 let tocando = false;
-
-function normalizarTexto(texto){
-  return texto.toLowerCase()
-    .normalize("NFD")
-    .replace(/[\u0300-\u036f]/g, "")
-    .replace(/\s+/g, " ")
-    .trim();
-}
-
-function somenteNumeros(texto){
-  return texto.replace(/\D/g, "");
-}
 
 function playMusic(){
   const musica = document.getElementById("musica");
@@ -445,22 +242,22 @@ function playMusic(){
 
   if(!tocando){
     musica.play();
-    botao.innerHTML = "⏸ Pausar";
+    botao.innerHTML = "Pausar";
     tocando = true;
   }else{
     musica.pause();
-    botao.innerHTML = "🎵 Música";
+    botao.innerHTML = "Música";
     tocando = false;
   }
 }
 
-const data = new Date("Oct 30, 2026 19:00:00").getTime();
+const dataCasamento = new Date("2026-09-05T17:00:00-04:00").getTime();
 
 setInterval(() => {
-  const now = new Date().getTime();
-  const diff = data - now;
+  const agora = new Date().getTime();
+  const diferenca = dataCasamento - agora;
 
-  if(diff <= 0){
+  if(diferenca <= 0){
     document.getElementById("d").innerHTML = "00";
     document.getElementById("h").innerHTML = "00";
     document.getElementById("m").innerHTML = "00";
@@ -468,114 +265,15 @@ setInterval(() => {
     return;
   }
 
-  document.getElementById("d").innerHTML = Math.floor(diff / (1000 * 60 * 60 * 24));
-  document.getElementById("h").innerHTML = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-  document.getElementById("m").innerHTML = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
-  document.getElementById("s").innerHTML = Math.floor((diff % (1000 * 60)) / 1000);
+  document.getElementById("d").innerHTML = Math.floor(diferenca / (1000 * 60 * 60 * 24));
+  document.getElementById("h").innerHTML = Math.floor((diferenca % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  document.getElementById("m").innerHTML = Math.floor((diferenca % (1000 * 60 * 60)) / (1000 * 60));
+  document.getElementById("s").innerHTML = Math.floor((diferenca % (1000 * 60)) / 1000);
 }, 1000);
 
-function mostrarOpcao(tipo){
-  document.getElementById("bemol").style.display = "none";
-  document.getElementById("dinamica").style.display = "none";
-  document.getElementById("pix").style.display = "none";
-  document.getElementById(tipo).style.display = "block";
-
-  if(tipo === "pix"){
-    document.getElementById("pixCode").value =
-`Presente de casamento - Edvaldo & Ana
-Chave PIX: 993293049`;
-  }
-}
-
 function copiarPix(){
-  navigator.clipboard.writeText("993293049");
+  navigator.clipboard.writeText("51053942249");
   alert("Chave PIX copiada!");
-}
-
-function consultarConvite(){
-  const buscaOriginal = document.getElementById("buscaConvidado").value;
-  const buscaNome = normalizarTexto(buscaOriginal);
-  const buscaTelefone = somenteNumeros(buscaOriginal);
-
-  if(!buscaNome && !buscaTelefone){
-    alert("Digite seu nome ou telefone.");
-    return;
-  }
-
-  const convidado = convidados.find(c => 
-    normalizarTexto(c.nome) === buscaNome || c.telefone === buscaTelefone
-  );
-
-  if(!convidado){
-    document.getElementById("resultadoConvite").value =
-`Nome ou telefone não encontrado.
-
-Entre em contato com os noivos para confirmar sua presença.`;
-    document.getElementById("areaResultado").style.display = "block";
-    mensagemConfirmacao = "";
-    return;
-  }
-
-  const base = gerarCodigoBase(convidado.nome, convidado.telefone);
-
-  let texto = `Confirmação de presença - Casamento Edvaldo & Ana
-Nome: ${formatarNome(convidado.nome)}
-Telefone: ${convidado.telefone}
-Quantidade de senhas: ${convidado.senhas}
-
-Senhas geradas:
-`;
-
-  for(let i = 1; i <= convidado.senhas; i++){
-    texto += `Senha ${i}: ${base}-${i}\n`;
-  }
-
-  texto += `
-Cerimônia: Igreja de São Jorge
-Horário: 19h
-Recepção: BEER DANCE`;
-
-  document.getElementById("resultadoConvite").value = texto;
-  document.getElementById("areaResultado").style.display = "block";
-  mensagemConfirmacao = texto;
-
-  enviarWhatsApp();
-}
-
-function gerarCodigoBase(nome, telefone){
-  const nomeBase = normalizarTexto(nome)
-    .replace(/[^a-z]/g, "")
-    .substring(0,3)
-    .toUpperCase();
-
-  const telBase = telefone.slice(-4);
-  return nomeBase + telBase;
-}
-
-function formatarNome(nome){
-  return nome.split(" ").map(p => 
-    p.charAt(0).toUpperCase() + p.slice(1)
-  ).join(" ");
-}
-
-function enviarWhatsApp(){
-  if(!mensagemConfirmacao){
-    alert("Consulte primeiro seu convite.");
-    return;
-  }
-
-  const mensagem = encodeURIComponent(mensagemConfirmacao);
-  window.open(`https://wa.me/${numeroNoivos}?text=${mensagem}`, "_blank");
-}
-
-function copiarConfirmacao(){
-  if(!mensagemConfirmacao){
-    alert("Consulte primeiro seu convite.");
-    return;
-  }
-
-  navigator.clipboard.writeText(mensagemConfirmacao);
-  alert("Confirmação copiada!");
 }
 </script>
 
