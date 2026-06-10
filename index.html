@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Edvaldo & Ana</title>
+<title>Edvaldo & Ana Rita</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Cinzel:wght@400;700&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
 
@@ -141,26 +141,6 @@ section{
   box-shadow:0 5px 20px rgba(31,77,58,.15);
 }
 
-.input-campo{
-  width:100%;
-  padding:12px;
-  border-radius:10px;
-  border:1px solid var(--gold);
-  margin-top:12px;
-  text-align:center;
-  font-size:16px;
-}
-
-.textarea-campo{
-  width:100%;
-  height:150px;
-  margin-top:10px;
-  padding:10px;
-  border-radius:10px;
-  border:1px solid var(--gold);
-  font-size:13px;
-}
-
 .contador{
   display:flex;
   justify-content:center;
@@ -251,7 +231,7 @@ footer .assinatura{
   <source src="amor.mp3" type="audio/mpeg">
 </audio>
 
-<div class="audio" onclick="playMusic()">🎵 Música</div>
+<div class="audio" onclick="playMusic()">Música</div>
 
 <div class="hero">
   <div class="card">
@@ -269,11 +249,11 @@ footer .assinatura{
         Com alegria no coração, convidamos você para celebrar conosco este momento especial.
       </p>
 
-      <div class="data">19h</div>
+      <div class="data">05 de Setembro de 2026 • 17h</div>
 
       <a class="btn" href="#cerimonia">Cerimônia</a>
       <a class="btn" href="#recepcao">Recepção</a>
-      <a class="btn" href="#presentes">Lista de Presentes</a>
+      <a class="btn" href="#presentes">Presente</a>
       <a class="btn" href="#presenca">Confirmar Presença</a>
     </div>
   </div>
@@ -294,7 +274,8 @@ footer .assinatura{
   <div class="box">
     <p><strong>Igreja de São Jorge</strong></p>
     <p>R. Emílio Ruas, 311 - São Jorge, Manaus - AM, 69033-440</p>
-    <p><strong>Horário:</strong> 17h</p>
+    <p><strong>Dia:</strong> 05/09/2026</p>
+    <p><strong>Horário da celebração:</strong> 17h</p>
 
     <a class="btn" target="_blank" href="https://maps.app.goo.gl/MzMsnWYaQoSTDGcs5">
       Ver localização
@@ -315,76 +296,47 @@ footer .assinatura{
 </section>
 
 <section id="presentes">
-  <h2 class="titulo">Lista de Presentes</h2>
+  <h2 class="titulo">Presente</h2>
   <div class="box">
-    <p>Escolha a melhor forma de nos presentear.</p>
+    <p>Se desejar nos presentear, utilize a chave PIX abaixo:</p>
 
-    <button class="btn" onclick="mostrarOpcao('bemol')">Loja Bemol</button>
-    <button class="btn" onclick="mostrarOpcao('dinamica')">Loja Dinâmica</button>
-    <button class="btn" onclick="mostrarOpcao('pix')">PIX</button>
+    <p><strong>Chave PIX:</strong></p>
+    <p style="font-size:22px;color:#d4af37;font-weight:bold;">
+      51053942249
+    </p>
 
-    <div id="bemol" style="display:none; margin-top:15px;">
-      <p>Você pode escolher um presente diretamente na Bemol.</p>
-      <a class="btn" target="_blank" href="https://www.bemol.com.br/">Acessar Bemol</a>
-    </div>
+    <p><strong>Titular:</strong><br>Edvaldo Cavalcante da Silva</p>
 
-    <div id="dinamica" style="display:none; margin-top:15px;">
-      <p>Você pode escolher um presente diretamente na Dinâmica.</p>
-      <a class="btn" target="_blank" href="https://www.dinamica.com.br/">Acessar Dinâmica</a>
-    </div>
-
-    <div id="pix" style="display:none; margin-top:15px;">
-      <p>Se preferir, você pode contribuir via PIX.</p>
-      <p><strong>Chave PIX:</strong></p>
-      <p style="font-size:20px;color:#d4af37;font-weight:bold;"> 92 99347-1741</p>
-
-      <textarea id="pixCode" class="textarea-campo" readonly></textarea>
-
-      <button class="btn" onclick="copiarPix()">Copiar chave PIX</button>
-    </div>
+    <button class="btn" onclick="copiarPix()">Copiar Chave PIX</button>
   </div>
 </section>
 
 <section id="presenca">
-  <h2 class="titulo">Confirme sua presença</h2>
+  <h2 class="titulo">Confirmação de Presença</h2>
   <div class="box">
-    <p>Primeiro confirme seu nome ou telefone na lista. Depois o sistema gera suas senhas e envia para os noivos.</p>
+    <p>Clique no botão abaixo para confirmar sua presença pelo WhatsApp.</p>
 
-    <input type="text" id="buscaConvidado" class="input-campo" placeholder="Digite seu nome ou telefone">
+    <a 
+      class="btn" 
+      target="_blank" 
+      href="https://wa.me/5592993471741?text=Olá,%20confirmo%20minha%20presença%20no%20casamento%20de%20Edvaldo%20e%20Ana%20Rita."
+    >
+      Confirmar Presença no WhatsApp
+    </a>
 
-    <button class="btn" onclick="consultarConvite()">Consultar e enviar confirmação</button>
-
-    <div id="areaResultado" style="display:none;">
-      <textarea id="resultadoConvite" class="textarea-campo" readonly></textarea>
-      <button class="btn" onclick="enviarWhatsApp()">Enviar novamente pelo WhatsApp</button>
-      <button class="btn" onclick="copiarConfirmacao()">Copiar confirmação</button>
-    </div>
+    <p style="margin-top:15px;">
+      WhatsApp: (92) 99347-1741
+    </p>
   </div>
 </section>
 
 <footer>
   <p class="assinatura">Edvaldo & Ana Rita</p>
-  <p>Cerimônia às 17h</p>
+  <p>05 de Setembro de 2026 • 17h</p>
 </footer>
 
 <script>
-const numeroNoivos = "55 92 99347-1741";
-
-
-let mensagemConfirmacao = "";
 let tocando = false;
-
-function normalizarTexto(texto){
-  return texto.toLowerCase()
-    .normalize("NFD")
-    .replace(/[\u0300-\u036f]/g, "")
-    .replace(/\s+/g, " ")
-    .trim();
-}
-
-function somenteNumeros(texto){
-  return texto.replace(/\D/g, "");
-}
 
 function playMusic(){
   const musica = document.getElementById("musica");
@@ -392,16 +344,16 @@ function playMusic(){
 
   if(!tocando){
     musica.play();
-    botao.innerHTML = "⏸ Pausar";
+    botao.innerHTML = "Pausar";
     tocando = true;
   }else{
     musica.pause();
-    botao.innerHTML = "🎵 Música";
+    botao.innerHTML = "Música";
     tocando = false;
   }
 }
 
-const data = new Date("05 de setembro de 2026, às 17h00").getTime();
+const data = new Date("2026-09-05T17:00:00").getTime();
 
 setInterval(() => {
   const now = new Date().getTime();
@@ -421,108 +373,9 @@ setInterval(() => {
   document.getElementById("s").innerHTML = Math.floor((diff % (1000 * 60)) / 1000);
 }, 1000);
 
-function mostrarOpcao(tipo){
-  document.getElementById("bemol").style.display = "none";
-  document.getElementById("dinamica").style.display = "none";
-  document.getElementById("pix").style.display = "none";
-  document.getElementById(tipo).style.display = "block";
-
-  if(tipo === "pix"){
-    document.getElementById("pixCode").value =
-`Presente de casamento - Edvaldo & Ana Rita
-Chave PIX:  92 99347-1741`;
-  }
-}
-
 function copiarPix(){
-  navigator.clipboard.writeText("993293049");
+  navigator.clipboard.writeText("51053942249");
   alert("Chave PIX copiada!");
-}
-
-function consultarConvite(){
-  const buscaOriginal = document.getElementById("buscaConvidado").value;
-  const buscaNome = normalizarTexto(buscaOriginal);
-  const buscaTelefone = somenteNumeros(buscaOriginal);
-
-  if(!buscaNome && !buscaTelefone){
-    alert("Digite seu nome ou telefone.");
-    return;
-  }
-
-  const convidado = convidados.find(c => 
-    normalizarTexto(c.nome) === buscaNome || c.telefone === buscaTelefone
-  );
-
-  if(!convidado){
-    document.getElementById("resultadoConvite").value =
-`Nome ou telefone não encontrado.
-
-Entre em contato com os noivos para confirmar sua presença.`;
-    document.getElementById("areaResultado").style.display = "block";
-    mensagemConfirmacao = "";
-    return;
-  }
-
-  const base = gerarCodigoBase(convidado.nome, convidado.telefone);
-
-  let texto = `Confirmação de presença - Casamento Edvaldo & Ana
-Nome: ${formatarNome(convidado.nome)}
-Telefone: ${convidado.telefone}
-Quantidade de senhas: ${convidado.senhas}
-
-Senhas geradas:
-`;
-
-  for(let i = 1; i <= convidado.senhas; i++){
-    texto += `Senha ${i}: ${base}-${i}\n`;
-  }
-
-  texto += `
-Cerimônia: Igreja de São Jorge
-Horário: 19h
-Recepção: BEER DANCE`;
-
-  document.getElementById("resultadoConvite").value = texto;
-  document.getElementById("areaResultado").style.display = "block";
-  mensagemConfirmacao = texto;
-
-  enviarWhatsApp();
-}
-
-function gerarCodigoBase(nome, telefone){
-  const nomeBase = normalizarTexto(nome)
-    .replace(/[^a-z]/g, "")
-    .substring(0,3)
-    .toUpperCase();
-
-  const telBase = telefone.slice(-4);
-  return nomeBase + telBase;
-}
-
-function formatarNome(nome){
-  return nome.split(" ").map(p => 
-    p.charAt(0).toUpperCase() + p.slice(1)
-  ).join(" ");
-}
-
-function enviarWhatsApp(){
-  if(!mensagemConfirmacao){
-    alert("Consulte primeiro seu convite.");
-    return;
-  }
-
-  const mensagem = encodeURIComponent(mensagemConfirmacao);
-  window.open(`https://wa.me/${numeroNoivos}?text=${mensagem}`, "_blank");
-}
-
-function copiarConfirmacao(){
-  if(!mensagemConfirmacao){
-    alert("Consulte primeiro seu convite.");
-    return;
-  }
-
-  navigator.clipboard.writeText(mensagemConfirmacao);
-  alert("Confirmação copiada!");
 }
 </script>
 
